@@ -1,0 +1,51 @@
+EJERCICIO 1 - VALIDADOR DE MOVIMIENTOS DE CABALLO
+Lenguajes y Compiladores 2026-II -- Luismer Ortega
+============================================================
+
+CASOS DE PRUEBA
+--------------------------------------------
+Ak=a1, n=4
+  Cadena   : Kc2 Kd4 Kb3 Kc5
+  Resultado: movimiento CORRECTO
+
+Ak=a1, n=4
+  Cadena   : Kc2 Kd4 Kb4 Kc5
+  Resultado: INCORRECTO falla en el movimiento 3
+
+Ak=a2, n=5
+  Cadena   : Kc3 Ke4 Kf6 Ke8 Kg7
+  Resultado: movimiento CORRECTO
+
+Ak=a2, n=5
+  Cadena   : Kc8 Ke4 Kf6 Ke8 Kg7
+  Resultado: INCORRECTO falla en el movimiento 1
+
+Ak=a8, n=2
+  Cadena   : Kb6 Kd7
+  Resultado: movimiento CORRECTO
+
+Ak=a8, n=2
+  Cadena   : Kb6 Kb7
+  Resultado: INCORRECTO falla en el movimiento 2
+
+Ak=a1, n=10
+  Cadena   : Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Kb4
+  Resultado: movimiento CORRECTO
+
+Ak=a1, n=10
+  Cadena   : Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Qb4
+  Resultado: movimiento INCORRECTO falla letra Q no pertenece a un caballo
+
+Ak=a1, n=10
+  Cadena   : Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kh6 Kb4
+  Resultado: INCORRECTO falla en el movimiento 9
+
+
+MEDICION DE TIEMPO (C / MinGW gcc)
+--------------------------------------------
+Lenguaje        : C (gcc 6.3.0 MinGW)
+Posicion inicial: a2
+Movimientos     : 224
+Repeticiones    : 10
+Tiempo total    : 0.000029 segundos
+Tiempo promedio : 0.000003 segundos
