@@ -1,0 +1,17 @@
+UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA
+LENGUAJES Y COMPILADORES - EJERCICIO I (C++)
+========================================================
+
+Caso 1 [Ak=a1, n=4]: movimiento CORRECTO.
+Caso 2 [Ak=a1, n=4]: INCORRECTO falla en el movimiento 3.
+Caso 3 [Ak=a2, n=5]: movimiento CORRECTO.
+Caso 4 [Ak=a2, n=5]: INCORRECTO falla en el movimiento 1.
+Caso 5 [Ak=a8, n=2]: movimiento CORRECTO.
+Caso 6 [Ak=a8, n=2]: INCORRECTO falla en el movimiento 2.
+Caso 7 [Ak=a1, n=10]: movimiento CORRECTO.
+Caso 8 [Ak=a1, n=10]: movimiento INCORRECTO falla letra Q no pertenece a un caballo.
+Caso 9 [Ak=a1, n=10]: INCORRECTO falla en el movimiento 9.
+
+--- MEDICION DE TIEMPO (10x500 movimientos) ---
+Tiempo total:    0.9608 ms.
+Tiempo promedio: 0.09608 ms.
