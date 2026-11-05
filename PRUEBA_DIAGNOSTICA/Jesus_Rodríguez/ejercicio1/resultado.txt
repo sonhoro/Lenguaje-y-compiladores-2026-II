@@ -1,0 +1,35 @@
+EJERCICIO 1 - Caballo de ajedrez (Python)
+
+Ejemplos del enunciado:
+  Ak=a1 n=4 C=Kc2 Kd4 Kb3 Kc5 -> movimiento CORRECTO
+  Ak=a1 n=4 C=Kc2 Kd4 Kb4 Kc5 -> INCORRECTO falla en el movimiento 3
+  Ak=a2 n=5 C=Kc3 Ke4 Kf6 Ke8 Kg7 -> movimiento CORRECTO
+  Ak=a2 n=5 C=Kc8 Ke4 Kf6 Ke8 Kg7 -> INCORRECTO falla en el movimiento 1
+  Ak=a8 n=2 C=Kb6 Kd7 -> movimiento CORRECTO
+  Ak=a8 n=2 C=Kb6 Kb7 -> INCORRECTO falla en el movimiento 2
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Kb4 -> movimiento CORRECTO
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Qb4 -> INCORRECTO falla letra Q no pertenece a un caballo
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kh6 Kb4 -> INCORRECTO falla en el movimiento 9
+
+Lista de prueba: 224 movimientos, posicion inicial a2
+  Resultado: movimiento CORRECTO
+  Tiempo 10 repeticiones x 224 movimientos: 2058.00 us
+  Tiempo n=100 (100 movimientos x 100 repeticiones): 7178.30 us
+
+EJERCICIO 1 - Caballo de ajedrez (C)
+
+Ejemplos del enunciado:
+  Ak=a1 n=4 C=Kc2 Kd4 Kb3 Kc5 -> movimiento CORRECTO
+  Ak=a1 n=4 C=Kc2 Kd4 Kb4 Kc5 -> INCORRECTO falla en el movimiento 3
+  Ak=a2 n=5 C=Kc3 Ke4 Kf6 Ke8 Kg7 -> movimiento CORRECTO
+  Ak=a2 n=5 C=Kc8 Ke4 Kf6 Ke8 Kg7 -> INCORRECTO falla en el movimiento 1
+  Ak=a8 n=2 C=Kb6 Kd7 -> movimiento CORRECTO
+  Ak=a8 n=2 C=Kb6 Kb7 -> INCORRECTO falla en el movimiento 2
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Kb4 -> movimiento CORRECTO
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Qb4 -> INCORRECTO falla letra Q no pertenece a un caballo
+  Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kh6 Kb4 -> INCORRECTO falla en el movimiento 9
+
+Lista de prueba: 224 movimientos, posicion inicial a2
+  Resultado: movimiento CORRECTO
+  Tiempo 10 repeticiones x 224 movimientos: 9.20 us
+  Tiempo n=100 (100 movimientos x 100 repeticiones): 40.30 us

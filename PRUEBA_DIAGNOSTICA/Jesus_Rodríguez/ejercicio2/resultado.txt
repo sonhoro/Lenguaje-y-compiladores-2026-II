@@ -1,0 +1,37 @@
+EJERCICIO 2 - Pascal / (x+1)^n (Python)
+
+Coeficientes n=5: [1, 5, 10, 10, 5, 1]
+(x+1)^5 = x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1
+
+f(2) = (2+1)^5
+  termino 0: 1 * 2^5 = 32
+  termino 1: 5 * 2^4 = 80
+  termino 2: 10 * 2^3 = 80
+  termino 3: 10 * 2^2 = 40
+  termino 4: 5 * 2^1 = 10
+  termino 5: 1 * 2^0 = 1
+  Suma = 243
+
+Generacion n=100:
+  C(100,50) = 100891344545564193334812497256
+  Tiempo total 1000 generaciones: 470626.80 us
+  Tiempo por generacion: 470.63 us
+
+EJERCICIO 2 - Pascal / (x+1)^n (C)
+
+Coeficientes n=5: 1 5 10 10 5 1
+(x+1)^5 = x^5 + 5x^4 + 10x^3 + 10x^2 + 5x + 1
+
+f(2) = (2+1)^5
+  termino 0: 1 * 2^5 = 32
+  termino 1: 5 * 2^4 = 80
+  termino 2: 10 * 2^3 = 80
+  termino 3: 10 * 2^2 = 40
+  termino 4: 5 * 2^1 = 10
+  termino 5: 1 * 2^0 = 1
+  Suma = 243
+
+Generacion n=100:
+  C(100,50) = 100891344545564193334812497256
+  Tiempo total 1000 generaciones: 2769.40 us
+  Tiempo por generacion: 2.77 us

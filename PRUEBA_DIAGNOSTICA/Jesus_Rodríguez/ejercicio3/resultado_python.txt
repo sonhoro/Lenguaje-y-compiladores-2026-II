@@ -1,0 +1,72 @@
+EJERCICIO 3 - Palabras reservadas de C (Python)
+
+Archivo: ejemplo.c
+
+palabra | español | veces | líneas
+break | romper | 1 | 31
+case | caso | 1 | 31
+char | carácter | 2 | 6,18
+const | constante | 1 | 9
+continue | continuar | 1 | 22
+default | por_defecto | 1 | 32
+double | doble | 1 | 17
+else | sino | 1 | 23
+for | para | 1 | 20
+if | si | 1 | 21
+int | entero | 9 | 5,9,11,11,11,15,20,28,37
+return | retornar | 2 | 12,38
+sizeof | tamaño_de | 1 | 37
+static | estático | 1 | 9
+struct | estructura | 1 | 4
+switch | según | 1 | 30
+typedef | definir_tipo | 1 | 4
+unsigned | sin_signo | 1 | 6
+void | vacío | 1 | 15
+while | mientras | 1 | 29
+
+Total de palabras reservadas distintas: 20
+Total de apariciones: 30
+
+Código traducido:
+/* Programa de ejemplo: la palabra "while" dentro de este comentario no cuenta. */
+#include <stdio.h>
+
+definir_tipo estructura {
+    entero id;
+    sin_signo carácter activo;
+} Item;
+
+estático constante entero LIMITE = 10;
+
+entero suma(entero a, entero b) {
+    retornar a + b;
+}
+
+entero main(vacío) {
+    Item item = {1, 1};
+    doble total = 0.0;
+    carácter *msg = "for if else dentro de un string no cuentan";
+
+    para (entero i = 0; i < LIMITE; i++) {
+        si (i % 2 == 0) {
+            continuar;
+        } sino {
+            total += suma(i, item.id);
+        }
+    }
+
+    entero j = 0;
+    mientras (j < 3) {
+        según (j) {
+            caso 0: printf("cero\n"); romper;
+            por_defecto: printf("otro\n");
+        }
+        j++;
+    }
+
+    printf("%s %f %d\n", msg, total, (entero)tamaño_de(item));
+    retornar 0;
+}
+
+
+Tiempo n=100 (100 análisis del archivo): 10432.10 us
