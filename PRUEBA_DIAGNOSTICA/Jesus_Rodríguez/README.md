@@ -4,7 +4,8 @@
 
 **Video de defensa (Drive):** _PENDIENTE: pegar aquí el enlace_
 
-Cada ejercicio está codificado en **Python** y en **C**, y cada programa mide su tiempo y lo escribe en un `.txt`
+Ejercicios 1 y 2 en **Python y C**; ejercicio 3 solo en **C** (según la actualización del profesor; el ejercicio 1 admitía un solo
+lenguaje, se hizo en ambos para comparar). Cada programa mide su tiempo y lo escribe en un `.txt`
 (`resultado_python.txt`, `resultado_c.txt`; el script los une en `resultado.txt`).
 
 ## Cómo ejecutar
@@ -15,7 +16,7 @@ ambos con `winget`, compila los tres `.c` y ejecuta todo. También se puede hace
 ```
 python caballo.py            gcc -O2 -o caballo caballo.c            caballo
 python pascal.py [n] [x]     gcc -O2 -o pascal pascal.c              pascal [n] [x]
-python palabras_reservadas.py [archivo.c]   gcc -O2 -o palabras_reservadas palabras_reservadas.c   palabras_reservadas [archivo.c]
+gcc -O2 -o palabras_reservadas palabras_reservadas.c   palabras_reservadas [archivo.c]
 ```
 
 ## Ejercicio 1 – Caballo de ajedrez (`ejercicio1/`)
@@ -26,8 +27,8 @@ el salto desde la casilla actual es de `(1,2)` o `(2,1)` casillas en valor absol
 comprueban automáticamente (`assert` en Python, `strcmp` en C). En C la lista se carga desde `movimientos.txt` con
 `malloc` y se parte en tokens con un arreglo que crece con `realloc`.
 
-Notas: la lista del PDF dice tener 500 movimientos pero **trae 224**; se midió con esos 224 (10 repeticiones) y además
-n=100 (100 movimientos × 100 repeticiones). Como el PDF no indica la casilla inicial, se usó **a2**, desde la cual la lista es válida.
+Notas: la lista de prueba (`movimientos.txt`) trae los 500 movimientos válidos del enunciado, con inicio en **a2**; se miden
+10 repeticiones × 500 movimientos y además n=100 (100 movimientos × 100 repeticiones).
 
 ## Ejercicio 2 – (x+1)ⁿ con el triángulo de Pascal (`ejercicio2/`)
 
@@ -44,16 +45,17 @@ El programa C a analizar (`ejemplo.c`, o el archivo que se pase por argumento) s
 (`malloc` + `fread`). Un recorrido único ignora comentarios (`//`, `/* */`), cadenas y caracteres, y reconoce
 identificadores: si coinciden con una de las 44 palabras reservadas (32 de C89 + `inline`, `restrict` y las `_Bool`,
 `_Complex`, `_Atomic`… de C99/C11) se cuenta, se anota la línea y se sustituye por su traducción. La salida es una
-tabla `palabra | español | veces | líneas` y el código traducido. En Python se hace con una expresión regular.
+tabla `palabra | español | veces | líneas` y el código traducido.
 
 ## Resultados de una corrida (µs; varían de una ejecución a otra)
 
 | Medición | Python | C |
 |---|---|---|
-| Ej. 1: 10 × 224 movimientos | ~1130 | ~9 |
-| Ej. 1: n=100 (100 mov. × 100 rep.) | ~5250 | ~43 |
+| Ej. 1: 10 × 500 movimientos | ~2840 | ~18 |
+| Ej. 1: n=100 (100 mov. × 100 rep.) | ~5100 | ~36 |
 | Ej. 2: generar n=100 (por generación) | ~450 | ~2.8 |
-| Ej. 3: 100 análisis del archivo | ~6370 | ~1100 |
+
+Ej. 3 (solo C): 100 análisis del archivo ≈ 1100 µs.
 
 C resulta de decenas a cientos de veces más rápido porque está compilado a código máquina y no paga el costo del
 intérprete ni de los objetos de Python.

@@ -14,5 +14,5 @@ f(2) = (2+1)^5
 
 Generacion n=100:
   C(100,50) = 100891344545564193334812497256
-  Tiempo total 1000 generaciones: 2769.40 us
-  Tiempo por generacion: 2.77 us
+  Tiempo total 1000 generaciones: 2673.80 us
+  Tiempo por generacion: 2.67 us

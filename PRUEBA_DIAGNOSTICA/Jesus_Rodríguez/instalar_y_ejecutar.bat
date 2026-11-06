@@ -29,16 +29,17 @@ gcc -O2 -o ejercicio1\caballo.exe ejercicio1\caballo.c || goto :error
 gcc -O2 -o ejercicio2\pascal.exe ejercicio2\pascal.c || goto :error
 gcc -O2 -o ejercicio3\palabras_reservadas.exe ejercicio3\palabras_reservadas.c || goto :error
 
-echo [4/4] Ejecutando (cada ejercicio genera resultado_python.txt, resultado_c.txt y resultado.txt)...
+echo [4/4] Ejecutando (genera resultado*.txt en cada carpeta)...
 pushd ejercicio1 & python caballo.py >nul & caballo.exe & popd
 pushd ejercicio2 & python pascal.py >nul & pascal.exe & popd
-pushd ejercicio3 & python palabras_reservadas.py >nul & palabras_reservadas.exe & popd
+pushd ejercicio3 & palabras_reservadas.exe & popd
 
-for %%E in (ejercicio1 ejercicio2 ejercicio3) do (
+for %%E in (ejercicio1 ejercicio2) do (
     type %%E\resultado_python.txt > %%E\resultado.txt
     echo.>> %%E\resultado.txt
     type %%E\resultado_c.txt >> %%E\resultado.txt
 )
+copy /y ejercicio3\resultado_c.txt ejercicio3\resultado.txt >nul
 echo Listo. Revise los resultado.txt de cada carpeta.
 pause
 exit /b 0

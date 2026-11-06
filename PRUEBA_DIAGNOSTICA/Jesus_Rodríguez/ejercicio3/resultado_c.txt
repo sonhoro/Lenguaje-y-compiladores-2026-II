@@ -68,4 +68,4 @@ entero main(vacío) {
     retornar 0;
 }
 
-Tiempo n=100 (100 análisis del archivo): 1247.80 us
+Tiempo n=100 (100 análisis del archivo): 1301.90 us

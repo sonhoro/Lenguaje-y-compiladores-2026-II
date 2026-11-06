@@ -11,10 +11,10 @@ Ejemplos del enunciado:
   Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Qb4 -> INCORRECTO falla letra Q no pertenece a un caballo
   Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kh6 Kb4 -> INCORRECTO falla en el movimiento 9
 
-Lista de prueba: 224 movimientos, posicion inicial a2
+Lista de prueba: 500 movimientos, posicion inicial a2
   Resultado: movimiento CORRECTO
-  Tiempo 10 repeticiones x 224 movimientos: 2058.00 us
-  Tiempo n=100 (100 movimientos x 100 repeticiones): 7178.30 us
+  Tiempo 10 repeticiones x 500 movimientos: 2835.90 us
+  Tiempo n=100 (100 movimientos x 100 repeticiones): 5104.90 us
 
 EJERCICIO 1 - Caballo de ajedrez (C)
 
@@ -29,7 +29,7 @@ Ejemplos del enunciado:
   Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kc6 Qb4 -> INCORRECTO falla letra Q no pertenece a un caballo
   Ak=a1 n=10 C=Kc2 Kd4 Kf3 Ke5 Kg6 Kh8 Kf7 Kd8 Kh6 Kb4 -> INCORRECTO falla en el movimiento 9
 
-Lista de prueba: 224 movimientos, posicion inicial a2
+Lista de prueba: 500 movimientos, posicion inicial a2
   Resultado: movimiento CORRECTO
-  Tiempo 10 repeticiones x 224 movimientos: 9.20 us
-  Tiempo n=100 (100 movimientos x 100 repeticiones): 40.30 us
+  Tiempo 10 repeticiones x 500 movimientos: 18.20 us
+  Tiempo n=100 (100 movimientos x 100 repeticiones): 36.40 us
