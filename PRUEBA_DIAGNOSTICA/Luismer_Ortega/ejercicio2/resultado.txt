@@ -34,8 +34,8 @@ MEDICION DE TIEMPO (Python)
 Lenguaje        : Python 3
 n               : 100
 Repeticiones    : 100
-Tiempo total    : 0.031543 segundos
-Tiempo promedio : 0.000315 segundos
+Tiempo total    : 0.029669 segundos
+Tiempo promedio : 0.000297 segundos
 C(100,50)       : 100891344545564193334812497256
 EJERCICIO 2 - POLINOMIO (x+1)^n CON TRIANGULO DE PASCAL
 Lenguajes y Compiladores 2026-II -- Luismer Ortega
@@ -91,6 +91,6 @@ MEDICION DE TIEMPO (C / MinGW gcc)
 Lenguaje        : C (gcc 6.3.0 MinGW)
 n               : 100
 Repeticiones    : 100
-Tiempo total    : 0.049000 segundos
-Tiempo promedio : 0.000490 segundos
+Tiempo total    : 0.035000 segundos
+Tiempo promedio : 0.000350 segundos
 C(100,50)       : 100891344545564193334812497256

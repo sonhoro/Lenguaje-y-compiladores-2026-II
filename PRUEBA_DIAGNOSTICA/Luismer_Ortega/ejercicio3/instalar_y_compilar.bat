@@ -1,4 +1,6 @@
 @echo off
+setlocal
+cd /d "%~dp0"
 REM Script de instalacion y compilacion - Ejercicio 3
 REM Lenguajes y Compiladores 2026-II — Luismer Ortega
 
@@ -8,22 +10,9 @@ echo  Scripts de compilacion e instalacion
 echo ============================================================
 echo.
 
-REM --- Verificar Python ---
-echo [1/4] Verificando Python...
-python --version >nul 2>&1
-IF ERRORLEVEL 1 (
-    echo ERROR: Python no esta instalado o no esta en el PATH.
-    echo Descargalo desde https://www.python.org/downloads/
-    pause
-    exit /b 1
-) ELSE (
-    echo     OK - Python encontrado:
-    python --version
-)
-
 REM --- Verificar gcc ---
 echo.
-echo [2/4] Verificando gcc (MinGW)...
+echo [1/3] Verificando gcc (MinGW)...
 SET GCC=C:\MinGW\bin\gcc.exe
 IF NOT EXIST "%GCC%" (
     echo ERROR: gcc no encontrado en C:\MinGW\bin\
@@ -38,7 +27,7 @@ SET "PATH=C:\MinGW\bin;%PATH%"
 
 REM --- Compilar C ---
 echo.
-echo [3/4] Compilando palabras_reservadas.c...
+echo [2/3] Compilando palabras_reservadas.c...
 "%GCC%" -o palabras_reservadas.exe palabras_reservadas.c
 IF ERRORLEVEL 1 (
     echo ERROR: Fallo la compilacion de palabras_reservadas.c
@@ -48,32 +37,27 @@ IF ERRORLEVEL 1 (
     echo     OK - palabras_reservadas.exe generado.
 )
 
-REM --- Ejecutar ambos programas ---
+REM --- Ejecutar C ---
 echo.
-echo [4/4] Ejecutando los programas...
-echo.
-echo --- Python (programa ejemplo embebido) ---
-python palabras_reservadas.py
+echo [3/3] Ejecutando la solucion C...
+palabras_reservadas.exe %*
+IF ERRORLEVEL 1 (
+    echo ERROR: Fallo el analisis o la escritura de resultados.
+    pause
+    exit /b 1
+)
 
 echo.
-echo --- C (programa ejemplo embebido) ---
-palabras_reservadas.exe
-
-REM Combinar resultados
-echo.
-echo Combinando resultados...
-IF EXIST resultado.txt (
-    IF EXIST resultado_c.txt (
-        copy /y resultado.txt resultado_python.txt >nul
-        type resultado_c.txt >> resultado.txt
-        echo Resultados combinados en resultado.txt
-    )
+copy /y resultado_c.txt resultado.txt >nul
+IF ERRORLEVEL 1 (
+    echo ERROR: No se pudo copiar el resultado C a resultado.txt.
+    exit /b 1
 )
 
 echo.
 echo USO AVANZADO:
-echo   python palabras_reservadas.py mi_programa.c
-echo   palabras_reservadas.exe mi_programa.c
+echo   instalar_y_compilar.bat "C:\ruta\mi_programa.c"
 echo.
 echo Listo.
 pause
+exit /b 0

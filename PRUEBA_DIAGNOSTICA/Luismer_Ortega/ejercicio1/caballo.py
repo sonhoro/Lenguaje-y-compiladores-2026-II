@@ -12,6 +12,7 @@ Descripcion:
 Notacion: K<col><fila> (ej: Kc2)
 """
 
+import random
 import time
 
 # ------------------------------------------------------------------
@@ -120,26 +121,41 @@ CASOS_PRUEBA = [
 ]
 
 # ------------------------------------------------------------------
-# Cadena de movimientos publicada en el enunciado (224 tokens)
+# Generacion propia de 500 movimientos, autorizada por el profesor
 # ------------------------------------------------------------------
 
-MOVIMIENTOS_ENUNCIADO = (
-    "Kb4 Ka6 Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg1 Kh3 Kg5 Ke6 Kc7 Ka8 Kc7 Kb5 "
-    "Kd6 Kb7 Ka5 Kc4 Ka3 Kc2 Ka1 Kc2 Kb4 Ka6 Kb8 Kd7 Kb6 Ka8 Kc7 Ka6 "
-    "Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg3 Kh5 Kg7 Ke8 Kc7 Ka8 Kc7 Kb5 "
-    "Kd4 Kb3 Ka1 Kc2 Ka3 Kc4 Ka5 Kc6 Ka7 Kc8 Ka7 Kc6 Ka5 Kc4 Ka3 Kc2 "
-    "Ka1 Kc2 Kb4 Kd5 Kb6 Ka8 Kc7 Ka6 Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg1 Kh3 "
-    "Kg5 Ke6 Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg3 Kh5 Kg7 Ke8 Kc7 Ka8 Kc7 Kb5 "
-    "Kd6 Kb7 Ka5 Kc4 Ka3 Kc2 Ka1 Kc2 Kb4 Ka6 Kb8 Kd7 Kb6 Ka8 Kc7 Ka6 "
-    "Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg3 Kh5 Kg7 Ke8 Kc7 Ka8 Kc7 Kb5 "
-    "Kd4 Kb3 Ka1 Kc2 Ka3 Kc4 Ka5 Kc6 Ka7 Kc8 Ka7 Kc6 Ka5 Kc4 Ka3 Kc2 "
-    "Ka1 Kc2 Kb4 Kd5 Kb6 Ka8 Kc7 Ka6 Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg1 Kh3 "
-    "Kg5 Ke6 Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg3 Kh5 Kg7 Ke8 Kc7 Ka8 Kc7 Kb5 "
-    "Kd6 Kb7 Ka5 Kc4 Ka3 Kc2 Ka1 Kc2 Kb4 Ka6 Kb8 Kd7 Kb6 Ka8 Kc7 Ka6 "
-    "Kc5 Ka4 Kc3 Ka2 Kc1 Ke2 Kg3 Kh5 Kg7 Ke8 Kc7 Ka8 Kc7 Kb5 "
-    "Kd4 Kb3 Ka1 Kc2 Ka3 Kc4 Ka5 Kc6 Ka7 Kc8 Ka7 Kc6 Ka5 Kc4 Ka3 Kc2 "
-    "Ka1 Kc2 Kb4 Kd5 Kb6 Ka8"
-).split()
+POSICION_INICIAL_500 = "a2"
+
+
+def generar_movimientos(posicion_inicial, cantidad, semilla=2026):
+    """Genera saltos legales reproducibles; permite volver a visitar casillas."""
+    actual = pos_a_coords(posicion_inicial)
+    if actual is None:
+        raise ValueError("La posicion inicial debe estar dentro del tablero")
+    if cantidad < 0:
+        raise ValueError("La cantidad de movimientos no puede ser negativa")
+
+    saltos = ((1, 2), (2, 1), (-1, 2), (-2, 1),
+              (1, -2), (2, -1), (-1, -2), (-2, -1))
+    aleatorio = random.Random(semilla)
+    movimientos = []
+    for _ in range(cantidad):
+        destinos = [(actual[0] + dc, actual[1] + df)
+                    for dc, df in saltos
+                    if 0 <= actual[0] + dc < 8 and 0 <= actual[1] + df < 8]
+        actual = aleatorio.choice(destinos)
+        movimientos.append(f"K{chr(ord('a') + actual[0])}{actual[1] + 1}")
+    return movimientos
+
+
+MOVIMIENTOS_500 = generar_movimientos(POSICION_INICIAL_500, 500)
+
+for numero in (1, 250, 500):
+    cadena_fallida = MOVIMIENTOS_500.copy()
+    anterior = POSICION_INICIAL_500 if numero == 1 else MOVIMIENTOS_500[numero - 2][1:]
+    cadena_fallida[numero - 1] = "K" + anterior
+    CASOS_PRUEBA.append((POSICION_INICIAL_500, " ".join(cadena_fallida),
+                         f"INCORRECTO falla en el movimiento {numero}"))
 
 
 def ejecutar_pruebas():
@@ -164,14 +180,17 @@ def ejecutar_pruebas():
     return todos_ok
 
 
-def medir_tiempo_enunciado(repeticiones=10):
-    """Mide el tiempo de verificar la cadena del enunciado varias veces."""
-    posicion_inicial = "a2"
-    if not validar_movimientos(posicion_inicial, MOVIMIENTOS_ENUNCIADO)[0]:
-        raise ValueError("La cadena de movimientos del enunciado no es valida desde a2")
+def medir_tiempo_500(repeticiones=10):
+    """Mide solo la validacion de los 500 movimientos, no su generacion."""
+    if repeticiones <= 0:
+        raise ValueError("Las repeticiones deben ser positivas")
+    if len(MOVIMIENTOS_500) != 500:
+        raise ValueError("La cadena de medicion debe contener exactamente 500 movimientos")
+    if not validar_movimientos(POSICION_INICIAL_500, MOVIMIENTOS_500)[0]:
+        raise ValueError("La cadena de medicion contiene un movimiento incorrecto")
     inicio = time.perf_counter()
     for _ in range(repeticiones):
-        validar_movimientos(posicion_inicial, MOVIMIENTOS_ENUNCIADO)
+        validar_movimientos(POSICION_INICIAL_500, MOVIMIENTOS_500)
     fin = time.perf_counter()
     total = fin - inicio
     promedio = total / repeticiones
@@ -185,13 +204,15 @@ def medir_tiempo_enunciado(repeticiones=10):
 if __name__ == "__main__":
     # 1) Ejecutar casos de prueba
     todos_correctos = ejecutar_pruebas()
+    if not todos_correctos:
+        raise RuntimeError("Fallaron los casos de prueba del caballo")
 
-    # 2) Medir tiempo con la cadena publicada x 10 repeticiones
+    # 2) Medir tiempo con los 500 movimientos generados x 10 repeticiones
     print("=" * 60)
-    print(f"MEDICION DE TIEMPO — {len(MOVIMIENTOS_ENUNCIADO)} movimientos x 10 repeticiones")
+    print("MEDICION DE TIEMPO — 500 movimientos x 10 repeticiones")
     print("=" * 60)
-    total_seg, promedio_seg = medir_tiempo_enunciado(10)
-    print(f"Movimientos en cadena : {len(MOVIMIENTOS_ENUNCIADO)}")
+    total_seg, promedio_seg = medir_tiempo_500(10)
+    print(f"Movimientos en cadena : {len(MOVIMIENTOS_500)}")
     print(f"Repeticiones          : 10")
     print(f"Tiempo total          : {total_seg:.6f} segundos")
     print(f"Tiempo promedio       : {promedio_seg:.6f} segundos")
@@ -215,10 +236,13 @@ if __name__ == "__main__":
         f.write("\nMEDICION DE TIEMPO (Python)\n")
         f.write("-" * 40 + "\n")
         f.write(f"Lenguaje        : Python 3\n")
-        f.write("Posicion inicial: a2\n")
-        f.write(f"Movimientos     : {len(MOVIMIENTOS_ENUNCIADO)}\n")
+        f.write(f"Posicion inicial: {POSICION_INICIAL_500}\n")
+        f.write("Origen          : generacion propia autorizada; semilla 2026\n")
+        f.write(f"Movimientos     : {len(MOVIMIENTOS_500)}\n")
         f.write(f"Repeticiones    : 10\n")
         f.write(f"Tiempo total    : {total_seg:.6f} segundos\n")
         f.write(f"Tiempo promedio : {promedio_seg:.6f} segundos\n")
+        f.write("\nCADENA VALIDA UTILIZADA EN LA MEDICION\n")
+        f.write(" ".join(MOVIMIENTOS_500) + "\n")
 
     print("Resultados guardados en resultado.txt")

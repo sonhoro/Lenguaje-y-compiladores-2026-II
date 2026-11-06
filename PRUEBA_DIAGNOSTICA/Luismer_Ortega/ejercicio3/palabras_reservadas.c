@@ -399,6 +399,12 @@ int main(int argc, char *argv[]) {
 
     /* Traducir y mostrar */
     char *traducido = traducir_codigo(codigo);
+    if (!traducido) {
+        fprintf(stderr, "Error: no se pudo reservar memoria para la traduccion\n");
+        free(ocs);
+        free(codigo);
+        return 1;
+    }
     if (traducido) {
         printf("============================================================\n");
         printf("CODIGO CON PALABRAS RESERVADAS TRADUCIDAS AL ESPANOL\n");
@@ -408,6 +414,13 @@ int main(int argc, char *argv[]) {
 
     /* Guardar en archivo */
     FILE *f = fopen("resultado_c.txt", "w");
+    if (!f) {
+        perror("Error al abrir resultado_c.txt");
+        free(ocs);
+        free(traducido);
+        free(codigo);
+        return 1;
+    }
     if (f) {
         fprintf(f, "EJERCICIO 3 - PALABRAS RESERVADAS C -> ESPANOL\n");
         fprintf(f, "Lenguajes y Compiladores 2026-II -- Luismer Ortega\n");
@@ -450,7 +463,15 @@ int main(int argc, char *argv[]) {
             fprintf(f, "%s\n", traducido);
         }
 
-        fclose(f);
+        int error_escritura = ferror(f);
+        int error_cierre = fclose(f);
+        if (error_escritura || error_cierre != 0) {
+            fprintf(stderr, "Error: no se pudo guardar resultado_c.txt completo\n");
+            free(ocs);
+            free(traducido);
+            free(codigo);
+            return 1;
+        }
         printf("Resultados guardados en resultado_c.txt\n");
     }
 

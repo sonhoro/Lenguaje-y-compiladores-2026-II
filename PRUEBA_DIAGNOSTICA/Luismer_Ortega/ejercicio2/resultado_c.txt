@@ -52,6 +52,6 @@ MEDICION DE TIEMPO (C / MinGW gcc)
 Lenguaje        : C (gcc 6.3.0 MinGW)
 n               : 100
 Repeticiones    : 100
-Tiempo total    : 0.049000 segundos
-Tiempo promedio : 0.000490 segundos
+Tiempo total    : 0.035000 segundos
+Tiempo promedio : 0.000350 segundos
 C(100,50)       : 100891344545564193334812497256

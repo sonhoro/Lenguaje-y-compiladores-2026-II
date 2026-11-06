@@ -34,6 +34,6 @@ MEDICION DE TIEMPO (Python)
 Lenguaje        : Python 3
 n               : 100
 Repeticiones    : 100
-Tiempo total    : 0.031543 segundos
-Tiempo promedio : 0.000315 segundos
+Tiempo total    : 0.029669 segundos
+Tiempo promedio : 0.000297 segundos
 C(100,50)       : 100891344545564193334812497256
