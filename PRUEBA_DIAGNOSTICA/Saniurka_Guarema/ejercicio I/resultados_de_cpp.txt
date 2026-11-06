@@ -12,6 +12,8 @@ Caso 7 [Ak=a1, n=10]: movimiento CORRECTO.
 Caso 8 [Ak=a1, n=10]: movimiento INCORRECTO falla letra Q no pertenece a un caballo.
 Caso 9 [Ak=a1, n=10]: INCORRECTO falla en el movimiento 9.
 
---- MEDICION DE TIEMPO (10x500 movimientos) ---
-Tiempo total:    0.9608 ms.
-Tiempo promedio: 0.09608 ms.
+--- MEDICION DE TIEMPO (10x500 movimientos desde a2) ---
+Resultado 500 validos: movimiento CORRECTO.
+Tiempo total:    1.6562 ms.
+Tiempo promedio: 0.16562 ms.
+Prueba con fallo inyectado: INCORRECTO falla en el movimiento 250.

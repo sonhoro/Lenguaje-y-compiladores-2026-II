@@ -1,0 +1,6 @@
+UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA
+LENGUAJES Y COMPILADORES - EJERCICIO II (PYTHON)
+========================================================
+Tiempo de generacion para n=100 en Python: 0.68300 ms
+Cantidad de terminos: 101
+Coeficiente central (c[50]): 100891344545564193334812497256

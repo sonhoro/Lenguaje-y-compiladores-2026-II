@@ -1,5 +1,4 @@
 @echo off
-setlocal enabledelayedexpansion
 cd /d "%~dp0"
 
 title UNEG - Lenguajes y Compiladores - Ejercicio I
@@ -8,67 +7,57 @@ color 0A
 echo ========================================================
 echo   UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA (UNEG)
 echo        LENGUAJES Y COMPILADORES - PRUEBA DIAGNOSTICA
-echo          SCRIPT DE VERIFICACION Y EJECUCION
+echo       EJERCICIO I: VALIDACION DE CABALLO EN AJEDREZ
+echo                        (LENGUAJE: C++)
 echo ========================================================
 echo.
 
-:: 1. Autodetección y agregado al PATH temporal si no está reconocido
-where g++ >nul 2>&1
+:: 1. Autodeteccion del compilador g++ si no esta en el PATH
+where g++ >nul 2>nul
 if %ERRORLEVEL% neq 0 (
     if exist "C:\msys64\ucrt64\bin\g++.exe" (
-        set "PATH=C:\msys64\ucrt64\bin;!PATH!"
+        set "PATH=C:\msys64\ucrt64\bin;%PATH%"
     ) else if exist "C:\msys64\mingw64\bin\g++.exe" (
-        set "PATH=C:\msys64\mingw64\bin;!PATH!"
+        set "PATH=C:\msys64\mingw64\bin;%PATH%"
     )
 )
 
-echo [1/3] Verificando compilador de C++ (g++)...
-where g++ >nul 2>&1
+echo [1/1] Verificando compilador de C++ (g++)...
+where g++ >nul 2>nul
 if %ERRORLEVEL% equ 0 (
     echo     [OK] g++ detectado correctamente.
 ) else (
-    echo     [ERROR] No se encontro g++.exe.
-    goto FIN
-)
-
-echo.
-echo [2/3] Verificando interprete de Python...
-where python >nul 2>&1
-if %ERRORLEVEL% equ 0 (
-    echo     [OK] Python detectado correctamente.
-) else (
-    echo     [ADVERTENCIA] Python no encontrado en el PATH.
+    echo     [ERROR] No se encontro g++.exe en el sistema.
+    goto SALIDA
 )
 
 echo.
 echo ========================================================
 echo   COMPILANDO Y EJECUTANDO C++ (ajedrez.cpp)
 echo ========================================================
+if exist "ajedrez.exe" del /f /q "ajedrez.exe"
 g++ ajedrez.cpp -o ajedrez.exe
 if %ERRORLEVEL% equ 0 (
-    echo [OK] Compilacion exitosa. Ejecutando binario...
+    echo [OK] Compilacion exitosa. Ejecutando binario:
     echo.
     ajedrez.exe
 ) else (
     echo [ERROR] Fallo la compilacion de ajedrez.cpp.
-    goto FIN
+    goto SALIDA
 )
 
 echo.
 echo ========================================================
-echo   EJECUTANDO PYTHON (ajedrez.py)
+echo   VERIFICACION DE ARCHIVO GENERADO
 echo ========================================================
-where python >nul 2>&1
-if %ERRORLEVEL% equ 0 (
-    python ajedrez.py
-) else (
-    echo Se omite Python por no estar en el PATH.
+if exist "resultados_de_cpp.txt" (
+    echo [OK] Archivo 'resultados_de_cpp.txt' actualizado exitosamente.
 )
 
-:FIN
+:SALIDA
 echo.
 echo ========================================================
-echo   PROCESO COMPLETADO
+echo   PROCESO TERMINADO EXITOSAMENTE
 echo ========================================================
-echo Presione cualquier tecla para salir...
+echo Presione cualquier tecla para cerrar esta ventana...
 pause >nul
