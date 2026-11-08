@@ -1,8 +1,10 @@
 # Prueba diagnóstica – Lenguajes y Compiladores 2026-II
 
+**Grupo:** Prohibido rendirse — _"En la optimización habita el mañana"_
+
 **Estudiante:** Jesús Rodríguez · UNEG · Prof. Msc. Félix Márquez
 
-**Video de defensa (Drive):** _PENDIENTE: pegar aquí el enlace_
+**Video de defensa (Drive):** https://drive.google.com/file/d/1x5BysVJOZ8T6ABLSLkqd5XQlhEOR_1kf/view?usp=sharing
 
 Ejercicios 1 y 2 en **Python y C**; ejercicio 3 solo en **C** (según la actualización del profesor; el ejercicio 1 admitía un solo
 lenguaje, se hizo en ambos para comparar). Cada programa mide su tiempo y lo escribe en un `.txt`

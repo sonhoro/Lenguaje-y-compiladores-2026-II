@@ -2,7 +2,6 @@
 #include <string>
 #include <vector>
 #include <sstream>
-#include <cmath>
 #include <chrono>
 #include <fstream>
 #include <iomanip>

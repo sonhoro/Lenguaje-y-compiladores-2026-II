@@ -1,0 +1,55 @@
+=================================================================
+  PRUEBA DIAGNOSTICA — EJERCICIO 3
+  Deteccion y traduccion de palabras reservadas en C
+=================================================================
+  Estudiante  : Carlos Brito
+  Cedula      : 30857129
+  Seccion     : 3
+  Grupo       : Prohibido Rendirse
+  Eslogan     : En la optimización habita el mañana
+=================================================================
+  Lenguaje         : C (ANSI C99)
+  Archivo analizado: programa_ejemplo.c
+  Tamano en memoria: 1757 bytes
+  Iteraciones      : 100
+  Tiempo total     : 0.01400000 s
+  Tiempo promedio  : 0.00014000 s
+=================================================================
+
+  PALABRAS RESERVADAS ENCONTRADAS (31 ocurrencias):
+
+  Palabra C            Traduccion                Linea
+  -------------------- ------------------------- ------
+  typedef              def_tipo                  13
+  struct               estructura                13
+  int                  entero                    14
+  float                flotante                  15
+  float                flotante                  16
+  float                flotante                  20
+  float                flotante                  20
+  int                  entero                    20
+  float                flotante                  22
+  for                  para                      23
+  int                  entero                    23
+  return               retornar                  26
+  void                 vacio                     30
+  if                   si                        32
+  return               retornar                  32
+  if                   si                        36
+  else                 sino                      38
+  int                  entero                    43
+  void                 vacio                     43
+  int                  entero                    45
+  sizeof               tamanio_de                48
+  if                   si                        49
+  return               retornar                  51
+  float                flotante                  55
+  for                  para                      62
+  int                  entero                    62
+  for                  para                      64
+  int                  entero                    64
+  for                  para                      72
+  int                  entero                    72
+  return               retornar                  78
+
+=================================================================
