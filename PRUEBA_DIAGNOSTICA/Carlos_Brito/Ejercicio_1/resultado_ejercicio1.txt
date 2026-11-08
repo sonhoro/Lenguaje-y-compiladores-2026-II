@@ -1,0 +1,16 @@
+=================================================================
+  PRUEBA DIAGNÓSTICA — EJERCICIO 1
+  Validación de movimientos del caballo en ajedrez
+=================================================================
+  Estudiante  : Carlos Brito
+  Cédula      : 30857129
+  Sección     : 3
+  Grupo       : Prohibido Rendirse
+  Eslogan     : En la optimización habita el mañana
+=================================================================
+  Lenguaje    : Python 3
+  Movimientos : 500
+  Iteraciones : 10
+  Tiempo total    : 0.01158520 s
+  Tiempo promedio : 0.00115852 s
+=================================================================

@@ -1,0 +1,28 @@
+=================================================================
+  PRUEBA DIAGNOSTICA - EJERCICIO 2
+  Generacion de (x+1)^n con el Triangulo de Pascal
+=================================================================
+  Estudiante  : Carlos Brito
+  Cedula      : 30857129
+  Seccion     : 3
+  Grupo       : Prohibido Rendirse
+  Eslogan     : En la optimizacion habita el manana
+=================================================================
+  --- TIEMPOS DE EJECUCION ---
+=================================================================
+  Lenguaje        : Python 3
+  n               : 100
+  Repeticiones    : 1000
+  Tiempo total    : 0.84391570 s
+  Tiempo/llamada  : 0.00084392 s
+=================================================================
+=================================================================
+=================================================================
+  Lenguaje        : C (ANSI C99)
+  n               : 100
+  Repeticiones    : 1000
+  Tiempo total    : 0.04900000 s
+  Tiempo/llamada  : 0.00004900 s
+=================================================================
+  C es aprox. 10x mas rapido que Python en este calculo.
+=================================================================
