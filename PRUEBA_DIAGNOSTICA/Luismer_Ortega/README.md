@@ -6,7 +6,7 @@
 
 ## 🎥 Video de Defensa
 
-> **[Enlace al video en Google Drive — pendiente de grabación]**
+> **[Ver video de defensa en Google Drive](https://drive.google.com/file/d/1h23_DzIMqYOE3qUwnepphQ5hysr3b0Ek/view?usp=sharing)**
 >
 > Requisitos: máximo 5 minutos, formato horizontal, estudiante visible y audible. Presentar nombre del grupo, eslogan, nombre y apellido, y sección; explicar y demostrar el funcionamiento de los ejercicios.
 
