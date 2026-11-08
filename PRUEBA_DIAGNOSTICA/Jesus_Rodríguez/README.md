@@ -4,7 +4,7 @@
 
 **Estudiante:** Jesús Rodríguez · UNEG · Prof. Msc. Félix Márquez
 
-**Video de defensa (Drive):** https://drive.google.com/file/d/1x5BysVJOZ8T6ABLSLkqd5XQlhEOR_1kf/view?usp=sharing
+**Video de defensa (Drive):** [https://drive.google.com/file/d/1x5BysVJOZ8T6ABLSLkqd5XQlhEOR_1kf/view?usp=sharing](https://docs.google.com/videos/d/1TdN7Z5wY8LbbxOsY2lc69NsoUrCNmUcyA7XL6c-BUVk/play?usp=sharing)
 
 Ejercicios 1 y 2 en **Python y C**; ejercicio 3 solo en **C** (según la actualización del profesor; el ejercicio 1 admitía un solo
 lenguaje, se hizo en ambos para comparar). Cada programa mide su tiempo y lo escribe en un `.txt`
