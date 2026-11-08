@@ -1,6 +1,6 @@
 UNIVERSIDAD NACIONAL EXPERIMENTAL DE GUAYANA
 LENGUAJES Y COMPILADORES - EJERCICIO II (C)
 ========================================================
-Tiempo de generacion para n=100 en C: 0.58130 ms
+Tiempo de generacion para n=100 en C: 1.29370 ms
 Cantidad de terminos: 101
 Coeficiente central (c[50]): 100891344545564193334812497256
