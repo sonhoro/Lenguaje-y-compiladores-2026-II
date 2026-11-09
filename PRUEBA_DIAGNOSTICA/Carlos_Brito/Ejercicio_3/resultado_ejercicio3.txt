@@ -12,8 +12,8 @@
   Archivo analizado: programa_ejemplo.c
   Tamano en memoria: 1757 bytes
   Iteraciones      : 100
-  Tiempo total     : 0.01400000 s
-  Tiempo promedio  : 0.00014000 s
+  Tiempo total     : 0.01500000 s
+  Tiempo promedio  : 0.00015000 s
 =================================================================
 
   PALABRAS RESERVADAS ENCONTRADAS (31 ocurrencias):

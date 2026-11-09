@@ -12,7 +12,7 @@
 
 ## 📹 Video de Defensa
 
-> **Enlace Google Drive:** _(colocar aquí el enlace una vez grabado el video)_
+> 🎬 **Enlace Google Drive:** https://drive.google.com/file/d/1JqKqR_7gjq5QPfwYpTLD67pw7lXvjqbH/view?usp=drivesdk
 
 ### Requisitos del video (según el profesor)
 - Duración **máxima 5 minutos**, formato **horizontal** (no shorts/vertical)
@@ -29,21 +29,22 @@
 CARLOS BRITO/
 ├── README.md                        ← Este archivo (con enlace al video)
 ├── compilar_ejecutar.bat            ← Compila y corre todo (C + Python)
-├── comparativa_tiempos.txt          ← Tiempos Python vs C
 │
 ├── Ejercicio_1/
 │   ├── ejercicio1.py                ← Validador de movimientos (Python 3)
-│   ├── ejercicio1.c                 ← Validador de movimientos (C99)
+│   ├── EJECUTAR.bat                 ← Ejecuta el ejercicio 1
 │   └── resultado_ejercicio1.txt     ← Tiempos de ejecución generados
 │
 ├── Ejercicio_2/
 │   ├── ejercicio2.py                ← Triángulo de Pascal (Python 3)
 │   ├── ejercicio2.c                 ← Triángulo de Pascal (C99 + malloc)
-│   └── resultado_ejercicio2.txt     ← Tiempos de ejecución generados
+│   ├── EJECUTAR.bat                 ← Compila y ejecuta Python + C
+│   └── resultado_ejercicio2.txt     ← Tiempos Python vs C generados
 │
 ├── Ejercicio_3/
 │   ├── ejercicio3.c                 ← Detector palabras reservadas (C99)
 │   ├── programa_ejemplo.c           ← Archivo C analizado por el Ej. 3
+│   ├── EJECUTAR.bat                 ← Compila y ejecuta el ejercicio 3
 │   └── resultado_ejercicio3.txt     ← Resultados del análisis generados
 │
 └── scripts/
@@ -102,10 +103,6 @@ python -X utf8 ejercicio1.py
 rem Ejercicio 2
 cd Ejercicio_2
 python -X utf8 ejercicio2.py
-
-rem Ejercicio 3 (Python no requerido, pero disponible si se quiere probar)
-cd Ejercicio_3
-python -X utf8 ejercicio3.py programa_ejemplo.c
 ```
 
 ### C — Compilar y ejecutar (requiere GCC)
@@ -117,10 +114,11 @@ rem Luego compilar y ejecutar todo de una vez
 compilar_ejecutar.bat
 ```
 
-### Tiempos obtenidos (Python 3.11 vs GCC 16.2)
+### Tiempos obtenidos (GCC 16.2 / Python 3.11)
 
-| Ejercicio | Python | C | Aceleración |
+| Ejercicio | Lenguaje | Tiempo total | Tiempo/llamada |
 |---|---|---|---|
-| Ej. 1 — 10 iter. × 500 movimientos | 0.0097 s | 0.0010 s | ~9.7× |
-| Ej. 2 — 1000 iter. × n=100 | 0.853 s | 0.053 s | ~16.1× |
-| Ej. 3 — 100 iter. × análisis | 0.606 s | 0.031 s | ~19.5× |
+| Ej. 1 — 10 iter. × 500 movimientos | Python 3 | 0.01159 s | 0.00116 s |
+| Ej. 2 — 1000 iter. × n=100 | Python 3 | 0.844 s | 0.00084 s |
+| Ej. 2 — 1000 iter. × n=100 | C (GCC) | 0.049 s | 0.000049 s |
+| Ej. 3 — 100 iter. × análisis | C (GCC) | 0.014 s | 0.00014 s |

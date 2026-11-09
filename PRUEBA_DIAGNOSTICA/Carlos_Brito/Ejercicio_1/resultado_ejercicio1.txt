@@ -11,6 +11,6 @@
   Lenguaje    : Python 3
   Movimientos : 500
   Iteraciones : 10
-  Tiempo total    : 0.01158520 s
-  Tiempo promedio : 0.00115852 s
+  Tiempo total    : 0.01027370 s
+  Tiempo promedio : 0.00102737 s
 =================================================================
