@@ -14,7 +14,8 @@
 - **Eslogan:** *"En la optimización habita el mañana"*
 
 ---
-
+## 📹 Enlace a la Defensa Audiovisual (5%)
+🔗 **[Ver Video de Defensa en Google Drive](https://drive.google.com/file/d/1cLoZxsG_kGlBFsKw7_3udG3PUIsSaPc1/view?usp=sharing)**
 ## 📊 Matriz Resumen de Ejercicios y Lenguajes Utilizados
 
 | Ejercicio | ¿En qué consiste? | Lenguaje(s) Usado(s) | Archivo Principal | Justificación Técnica |
